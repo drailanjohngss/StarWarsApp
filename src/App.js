@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Router, Route, Switch } from "react-router-dom";
+import history from "./history";
+import { Layout, Menu } from "antd";
+import HeaderMenu from "./Components/HeaderMenu";
+
+import ListScreen from "./Screens/ListScreen";
+import "antd/dist/antd.css";
+import "./App.scss";
+
+const { Header, Content, Footer } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout className="layout">
+      <HeaderMenu />
+      <Content className="content">
+        <Router history={history}>
+          <Switch>
+            <Route path="/" component={ListScreen} />
+          </Switch>
+        </Router>
+      </Content>
+      <Footer style={{ textAlign: "center" }}>
+        Ant Design ©2018 Created by Ant UED
+      </Footer>
+    </Layout>
   );
 }
 

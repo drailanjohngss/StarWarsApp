@@ -1,0 +1,24 @@
+.content {
+  padding: 0 50px;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.subtitle {
+  &--date {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
